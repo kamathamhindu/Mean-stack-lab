@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+ <title>Login Validation</title> 
+ <style> 
+ body{ 
+ min-height: 100vh; 
+ display: flex; 
+ align-items: center; 
+ justify-content: center; 
+ } 
+ </style> 
+</head> 
+<body> 
+<div id="logform"> 
+ <div class="di"> 
+ <div class="lab">Username</div> 
+ <div><input type="text" class="txt" placeholder="Username" maxlength="30" id="i"></div> 
+ </div> 
+ <div class="di"> 
+ <div class="lab">Password</div> 
+ <div><input type="password" class="txt" placeholder="Password" maxlength="16" id="2"></div> 
+ </div> 
+ <div> 
+ <a href="#">Forget Password?</a> 
+ </div> 
+ <button onclick="vali()">Login</button> 
+ <div class="di">Don't have an account? <a onclick="register()" href="#">Signup Now</a></div> 
+</div> 
+<script> 
+ function vali(){ 
+ let user=document.getElementById("i").value; 
+ let pass=document.getElementById("2").value; 
+ let c=new User(user,pass); 
+ } 
+Page 33 
+ADITYA COLLEGE OF ENGINEERING, SURAMPALEM 
+ class User{ 
+ constructor(user,pass){ 
+ this.user=user; 
+ this.pass=pass; 
+ if(this.user.length<6 || this.pass.length<8){ 
+ alert("please verify the Password & Username"); 
+ } 
+ else{ 
+ if(this.user=="Chakri" &&this.pass=="12345678"){ 
+ alert("Login Successful"); 
+ }; 
+ }; 
+ } 
+ } 
+</script> 
+</body> 
+</html> 
